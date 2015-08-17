@@ -18,8 +18,10 @@ class Code {
 
         if (strlen($code) === $numbers) {
             $modulo = $this->getModulo($code, $numbers);
+            $index = $numbers - 1;
+            $codeModulo = intval($code[$index]);
 
-            if ($code[$numbers - 1] === $modulo) {
+            if ($codeModulo === $modulo) {
                 $status = TRUE;
             }
         }
@@ -37,7 +39,7 @@ class Code {
         $oddSum = 0;
         $evenSum = 0;
 
-        for ($i = 0; $i < $numbers; $i++) {
+        for ($i = 0; $i < $numbers - 1; $i++) {
             if ($i % 2 === 0) {
                 $oddSum += $string[$i] * 3;
             } elseif ($i % 2 === 1) {
