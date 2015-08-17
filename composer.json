@@ -7,7 +7,6 @@
             "email": "jakub.fruhbauer@bohemiasoft.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "EanCodeValidator\\": "src/"
@@ -23,5 +22,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
-    }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
 }
