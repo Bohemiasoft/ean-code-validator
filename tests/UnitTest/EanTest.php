@@ -8,34 +8,26 @@ namespace EanCodeValidator;
  */
 class EanTest extends \PHPUnit_Framework_TestCase {
 
-    /**
-     * @covers \EanCodeValidator\Code::isValidEan
-     */
-    public function testEan8() {
-        $testList = array(
-            '123456789' => FALSE,
+    public function getEan() {
+        return array(
+            array('73513537', TRUE, 8),
+            array('1234567899874', FALSE, 13),
+            array('8414636079170', TRUE, 13),
+            array('0751747057474', TRUE, 13),
         );
-
-        $eanValidator = new \EanCodeValidator\Code();
-
-        foreach ($testList as $argument => $result) {
-            $this->assertEquals($result, $eanValidator->isValidEan($argument, 8));
-        }
     }
 
     /**
      * @covers \EanCodeValidator\Code::isValidEan
+     * @dataProvider getEan
+     * @param string $ean
+     * @param bool $isValid
+     * @param int $type
      */
-    public function testEan13() {
-        $testList = array(
-            '8414636079170' => TRUE,
-        );
-
+    public function testEan($ean, $isValid, $type) {
         $eanValidator = new \EanCodeValidator\Code();
 
-        foreach ($testList as $argument => $result) {
-            $this->assertEquals($result, $eanValidator->isValidEan($argument, 13));
-        }
+        $this->assertEquals($isValid, $eanValidator->isValidEan($ean, $type));
     }
 
 }
