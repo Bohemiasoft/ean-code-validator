@@ -18,7 +18,7 @@ class Code
   {
     $status = FALSE;
 
-    if (preg_match('{[0-9]}', $code))
+    if (preg_match('/^[0-9]\d*$/', $code))
     {
       if (strlen( $code ) === $numbers)
       {
