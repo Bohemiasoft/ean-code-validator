@@ -18,18 +18,15 @@ class Code
   {
     $status = FALSE;
 
-    if (preg_match('/^[0-9]\d*$/', $code))
+    if (preg_match( '/^\d{' . $numbers . '}$/', $code ))
     {
-      if (strlen( $code ) === $numbers)
-      {
-        $modulo = $this->getModulo( $code, $numbers );
-        $index = $numbers - 1;
-        $codeModulo = intval( $code[$index] );
+      $modulo = $this->getModulo( $code, $numbers );
+      $index = $numbers - 1;
+      $codeModulo = intval( $code[$index] );
 
-        if ($codeModulo === $modulo)
-        {
-          $status = TRUE;
-        }
+      if ($codeModulo === $modulo)
+      {
+        $status = TRUE;
       }
     }
 
