@@ -1,12 +1,12 @@
 <?php
 
-namespace EanCodeValidator;
+namespace Bohemiasoft\EanCodeValidator;
 
 /**
  * @author Jakub Fruhbauer <jakub.fruhbauer@bohemiasoft.com>
  * @copyright (c) 2015, Bohemiasoft s.r.o. 14.8.2015
  */
-class Code
+class EanCodeValidator
 {
 
   /**
@@ -14,7 +14,7 @@ class Code
    * @param int $numbers
    * @return boolean
    */
-  public function isValidEan($code, $numbers)
+  public function isValid($code, $numbers)
   {
     $status = FALSE;
 

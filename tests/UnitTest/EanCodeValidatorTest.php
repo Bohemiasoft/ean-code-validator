@@ -1,12 +1,12 @@
 <?php
 
-namespace EanCodeValidator;
+namespace Bohemiasoft\EanCodeValidator;
 
 /**
  * @author Jakub Fruhbauer <jakub.fruhbauer@bohemiasoft.com>
  * @copyright (c) 2015, Bohemiasoft s.r.o. 14.8.2015
  */
-class EanTest extends \PHPUnit_Framework_TestCase
+class EanCodeValidator extends \PHPUnit_Framework_TestCase
 {
 
   public function getEan()
@@ -26,7 +26,7 @@ class EanTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-   * @covers \EanCodeValidator\Code::isValidEan
+   * @covers \Bohemiasoft\EanCodeValidator\EanCodeValidator::isValid
    * @dataProvider getEan
    * @param string $ean
    * @param bool $isValid
@@ -34,9 +34,9 @@ class EanTest extends \PHPUnit_Framework_TestCase
    */
   public function testEan($ean, $isValid, $type)
   {
-    $eanValidator = new \EanCodeValidator\Code();
+    $eanValidator = new \Bohemiasoft\EanCodeValidator\EanCodeValidator();
 
-    $this->assertEquals( $isValid, $eanValidator->isValidEan( $ean, $type ) );
+    $this->assertEquals( $isValid, $eanValidator->isValid( $ean, $type ) );
   }
 
 }
