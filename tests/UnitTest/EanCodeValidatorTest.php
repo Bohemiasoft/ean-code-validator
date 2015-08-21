@@ -1,6 +1,6 @@
 <?php
 
-namespace Bohemiasoft\EanCodeValidator;
+namespace Bohemiasoft\EanCodeValidator\Test\UnitTest;
 
 /**
  * @author Jakub Fruhbauer <jakub.fruhbauer@bohemiasoft.com>
