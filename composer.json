@@ -9,12 +9,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "EanCodeValidator\\": "src/"
+            "Bohemiasoft\\EanCodeValidator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EanCodeValidator\\Test\\UnitTest\\": "tests/UnitTest/"
+            "Bohemiasoft\\EanCodeValidator\\Test\\UnitTest\\": "tests/UnitTest/"
         }
     },
     "require": {
